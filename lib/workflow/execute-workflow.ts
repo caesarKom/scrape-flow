@@ -148,6 +148,7 @@ async function executeWorkflowPhase(
   console.log(
     `Executing phase ${phase.name} with ${creditsRequired} credits requtred`
   )
+  // TODO: decrement user balance
 
   const success = await executePhase(phase, node, environment, logCollector)
 
