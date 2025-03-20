@@ -32,7 +32,7 @@ export const StringParam = ({
       </Label>
       <Component
         id={id}
-        disable={disabled}
+        disabled={disabled}
         value={internalValue}
         placeholder="Enter value here"
         onChange={(e: any) => setInternalValue(e.target.value)}
