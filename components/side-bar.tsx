@@ -15,10 +15,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useState } from "react"
 
 const routes = [
-  { href: "/", label: "Home", icon: HomeIcon },
-  { href: "/workflows", label: "Workflows", icon: Layers2Icon },
-  { href: "/credentials", label: "Credentials", icon: ShieldCheckIcon },
-  { href: "/billing", label: "Billing", icon: CoinsIcon },
+  { href: "", label: "Home", icon: HomeIcon },
+  { href: "workflows", label: "Workflows", icon: Layers2Icon },
+  { href: "credentials", label: "Credentials", icon: ShieldCheckIcon },
+  { href: "billing", label: "Billing", icon: CoinsIcon },
 ]
 
 export const DesktopSidebar = () => {
@@ -40,7 +40,7 @@ export const DesktopSidebar = () => {
         {routes.map((route) => (
           <Link
             key={route.label}
-            href={route.href}
+            href={`/${route.href}`}
             className={buttonVariants({
               variant:
                 activeRoute.href === route.href
