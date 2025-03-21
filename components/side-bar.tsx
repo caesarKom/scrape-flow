@@ -13,6 +13,7 @@ import { Button, buttonVariants } from "@/components/ui/button"
 import { usePathname } from "next/navigation"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { useState } from "react"
+import { UserAvalilableCreditsBadge } from "./user-credits-badge"
 
 const routes = [
   { href: "", label: "Home", icon: HomeIcon },
@@ -34,7 +35,9 @@ export const DesktopSidebar = () => {
         <Logo />
       </div>
 
-      <div className="p-2">TODO CREDITS</div>
+      <div className="p-2">
+        <UserAvalilableCreditsBadge />
+      </div>
 
       <div className="flex flex-col p-2">
         {routes.map((route) => (
@@ -80,6 +83,7 @@ export function MobileSidebar() {
             side={"left"}
           >
             <Logo />
+            <UserAvalilableCreditsBadge />
             <div className="flex flex-col gap-1">
               {routes.map((route) => (
                 <Link
