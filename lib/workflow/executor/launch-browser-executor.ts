@@ -19,6 +19,7 @@ export async function LaunchBrowserExecutor(
     await page.goto(websiteUrl)
     environment.setPage(page)
     environment.log.info(`Opened page at: ${websiteUrl}`)
+
     return true
     //
   } catch (error: any) {
