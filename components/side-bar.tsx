@@ -40,9 +40,9 @@ export const DesktopSidebar = () => {
       </div>
 
       <div className="flex flex-col p-2">
-        {routes.map((route) => (
+        {routes.map((route, i) => (
           <Link
-            key={route.label}
+            key={i}
             href={`/${route.href}`}
             className={buttonVariants({
               variant:
