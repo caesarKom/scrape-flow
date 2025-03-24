@@ -42,6 +42,8 @@ export const CreateCredentialDialog = ({
     mutationFn: CreateCredential,
     onSuccess: () => {
       toast.success("Credenial created", { id: "create-credenial" })
+      form.reset()
+      setOpen(false)
     },
     onError: () => {
       toast.error("Failed to create credenial", { id: "create-credenial" })
@@ -52,19 +54,12 @@ export const CreateCredentialDialog = ({
     (values: createCredentialsSchemaType) => {
       toast.loading("Creating credential...", { id: "create-credenial" })
       mutate(values)
-      setOpen(false)
     },
     [mutate]
   )
 
   return (
-    <Dialog
-      open={open}
-      onOpenChange={(open) => {
-        form.reset()
-        setOpen(open)
-      }}
-    >
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <Button>{triggerText ?? "Create"}</Button>
       </DialogTrigger>
